@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.btn{
+		position: absolute;
+		background-color: skyblue;
+		left: 50px;
+		width: 90px;
+		height: 100px;
+		margin: 5px;
+	}
+</style>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#right").click(function() {
+			$(".btn").animate({
+				"left": "+=150"
+			}, "slow");
+		})
+		
+		$("#left").click(function() {
+			$(".btn").animate({
+				"left": "-=150"
+			}, "slow");
+		});
+		
+	});
+</script>
+</head>
+<body>
+	<button id="left">◀</button>
+	<button id="right">▶</button>
+	<div class="btn"></div>
+</body>
+</html>

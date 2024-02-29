@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+	const news = [ "정부 '전공의 오늘까지 복귀하면 책임 안 물어'...최후통첩 '운명의날'검찰",
+				   "'민주당 돈봉투' 윤관석·임종성·허종식 불구속 기소",
+				   "비례 1석 줄고 전북 10석 유지...선거구 획정안 확정",
+				   "류재철 LG전자 사장 '3년 내 美 B2B 생활가전 톱3 진입'",
+				   "황현식 LG유플러스 대표 '생성AI '익시젠' 상반기 출시'",
+				   "5년만에 연체율 최고치, 10개월 연속 뛰는 가계대출…여기저기서 부실 경고음" ];
+	let index = 0;
+	let timer ;
+	function start_news() {
+		// 2초마다 showNows 함수를 실행하자. (showNow는 콜백함수)
+		timer = setInterval(() => {
+			let div = document.querySelector("#mydiv");
+			div.textContent = news[index++];
+			if(index === news.length){index=0}
+		}, 2000);
+	}
+	function stop_news() {
+		// setInterval() 중지
+		clearInterval(timer);
+	}
+</script>
+</head>
+<body>
+	<div id="mydiv"></div>
+	<button onclick="start_news">뉴스보기</button>
+	<button onclick="stop_news">뉴스중지</button>
+</body>
+</html>

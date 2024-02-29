@@ -14,15 +14,54 @@ $(function() {
 		"name":"홍과장"},{
 		"addr":"대전"	,	
 		"name":"박사장"}];
+	
 	// function( Object elementOfArray, Integer indexInArray ) => Object)
 	// function( Object propertyOfObject String key ) => Object)
-	
+	// 데이터를 가져옴
 	const res1 = $.map(arr1, function(obj, idx) {
 		if (obj.addr === '서울','부산','대전') 
-			return obj.name
+			return obj.name;
 	});
 	console.log(res1);
+	
+	// 마지막 인자를 넣지 않으면 true를 반환하는 모든 요소로 구성된 배열을 반환
+	const res2 = $.grep(arr1, function(obj, idx) {
+		if (obj.addr === '서울') {
+			return true;
+		}
+		else
+			return false;
+	})
+		console.log(res2);
+	// 0보다 크지 않은 숫자를 포함하도록 숫자 배열을 필터링한다.
+	// 이때 true 생략 하면 반대 결과가 나온다. ()
+	const res3 = $.grep( [ 0, 1, 2 ], function( n, i ) {
+    	return n > 0;
+	/* }, true ); */
+	}); // [1, 2]
+	console.log(res3); // 0
+	
+	// 서울을 가지고 있는 요소만 배열로 반환
+	const res4 = $.grep(arr1, function(obj, idx) {
+		return obj.addr === '서울';
+	})
+	console.log(res4);
+	
+	// 서울을 제외한 요소만 배열로 반환
+	const res5 = $.grep(arr1, function(obj, idx) {
+		return obj.addr === '서울';
+	}, true);
+	console.log(res5);
+	
+	
+	
+	
+	
+	
+	
 });
+
+
 </script> 
 </head>
 <body>

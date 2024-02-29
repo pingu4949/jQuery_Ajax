@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script type="text/javascript">
+	// p:eq() : 몇번째 값인지 & 요소값이 0~부터시작
+	$(function() {
+		$("#wrap p:eq(1)").css("background","skyblue");
+		$("#wrap p:eq(1)").after("<p>After</p>");		//선택한 요소 뒤
+		$("#wrap p:eq(1)").before("<p>Before</p>");		//선택한 요수 앞
+		$("#wrap p").prepend("<p>prepend</p>");	//선택한 요수 맨 앞
+		$("#wrap p").append("<p>append</p>");		//선택한 요수 맨 뒤
+		
+	})
+</script>
+</head>
+<body>
+	<div id="wrap">
+		<p>내용1</p>
+		<p>내용2</p>
+		<p>내용3</p>
+	</div>
+<script type="text/javascript">
+
+</script>
+</body>
+</html>

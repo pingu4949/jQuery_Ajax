@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<products>
+	<product name="제니시스" count="5"></product>
+	<product name="아반떼" count="3"></product>
+	<product name="그랜져" count="4"></product>
+	<product name="BMW" count="5"></product>
+	<product name="Volvo" count="2"></product>
+</products>
